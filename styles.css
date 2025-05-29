@@ -1,7 +1,7 @@
 
         body {
             font-family: Arial, sans-serif;
-            margin: 10%;
+            margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
@@ -9,9 +9,9 @@
         }
 
         nav {
-            background-color: #333;
+            background-color: #c79ea8;
             color: white;
-            padding: 10px;
+            padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -24,9 +24,10 @@
 
         .nav-buttons button,
         .nav-buttons .dropdown {
-            background-color: #555;
+            background-color: #c79ea8;
             color: white;
-            border: none;
+            border: 0,5%;
+            border-color: #f9f9f9;
             padding: 10px 15px;
             cursor: pointer;
             border-radius: 5px;
@@ -34,8 +35,11 @@
 
         .nav-buttons button:hover,
         .nav-buttons .dropdown:hover {
-            background-color: #777;
+            background-color: #E83A4A;
+            border: 0,5%;
+            border-color: #f9f9f9;
         }
+        
 
         .dropdown {
             position: relative;
@@ -59,7 +63,7 @@
         }
 
         .dropdown-content a:hover {
-            background-color: #f1f1f1;
+            background-color: #E83A4A;
         }
 
         .dropdown:hover .dropdown-content {
