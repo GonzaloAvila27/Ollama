@@ -1,14 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="stylesheet" href="styles.css" type="text/css">
     <title>Interfaz Ollama</title>
-    
 </head>
 <body>
-<!-- Navegador -->
+    <!-- Navegador -->
     <nav>
         <div><strong>Chat IA</strong></div>
         <div class="nav-buttons">
@@ -25,48 +25,18 @@
         </div>
     </nav>
 
-        <div class="chat-container" id="chat">
-            <!-- Mensajes se agregan aquí -->
-        </div>
+    <!-- Contenedor de chat -->
+    <div class="chat-container" id="chat">
+        <!-- Mensajes se agregan aquí -->
+    </div>
 
-        <div class="input-container">
-            <input type="text" id="userInput" placeholder="Escribí tu mensaje...">
-            <button onclick="sendMessage()">Enviar</button>
-        </div>
+    <!-- Contenedor de entrada -->
+    <div class="input-container">
+        <input type="file" id="pdfInput" accept=".pdf">
+        <input type="text" id="userInput" placeholder="Escribí tu mensaje o consulta sobre el PDF...">
+        <button onclick="sendPDFQuery()">Enviar</button>
+    </div>
 
-    <!-- javascript -->
-    <script>
-        function sendMessage() {
-            const input = document.getElementById("userInput");
-            const message = input.value.trim();
-            if (message === "") return;
-
-            const chat = document.getElementById("chat");
-
-            // Mensaje del usuario
-            const userMsg = document.createElement("div");
-            userMsg.className = "chat-message user";
-            userMsg.innerText = message;
-            chat.appendChild(userMsg);
-
-            // Simulación de respuesta del bot
-            const botMsg = document.createElement("div");
-            botMsg.className = "chat-message bot";
-            botMsg.innerText = "Respuesta automática: " + message;
-            chat.appendChild(botMsg);
-
-            // Limpiar input y hacer scroll al final
-            input.value = "";
-            chat.scrollTop = chat.scrollHeight;
-        }
-
-        // Permitir enviar con Enter
-        document.getElementById("userInput").addEventListener("keypress", function (e) {
-            if (e.key === "Enter") {
-                sendMessage();
-            }
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
